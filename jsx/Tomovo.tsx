@@ -24,7 +24,7 @@ class Graf extends React.Component<{}, {}> {
             ['2013', 1000, 1000],
             ['2014', 0, 2000],
             ['2015', 1000, 1000]
-        ];
+        ]; 
          
         return <h1>Ahoj</h1>
         //<Chart data={data}>
