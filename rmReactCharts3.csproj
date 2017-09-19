@@ -28,6 +28,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>2.4</TypeScriptToolsVersion>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -206,21 +207,17 @@
     <Content Include="scripts\jquery-3.1.1.min.js" />
     <Content Include="scripts\jquery-3.1.1.slim.js" />
     <Content Include="scripts\jquery-3.1.1.slim.min.js" />
-    <Content Include="scripts\jquery.signalR-2.2.2.js" />
-    <Content Include="scripts\jquery.signalR-2.2.2.min.js" />
+    <Content Include="scripts\react-charts.js" />
     <Content Include="scripts\react-dom.js" />
     <Content Include="scripts\react-dom.min.js" />
     <Content Include="scripts\react.js" />
     <Content Include="scripts\react.min.js" />
     <Content Include="SinglePageApp.html" />
-    <Content Include="TestBootsrap.html" />
-    <Content Include="SinglePageScenario.html" />
     <Content Include="Web.config" />
     <Content Include="scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Backends\ScenarioHub.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -230,19 +227,14 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <TypeScriptCompile Include="jsx\SinglePageApp.tsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </TypeScriptCompile>
-    <TypeScriptCompile Include="jsx\SinglePageScenario.tsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </TypeScriptCompile>
+    <TypeScriptCompile Include="scripts\react-charts.d.ts" />
+    <TypeScriptCompile Include="jsx\Tomovo.tsx" />
     <TypeScriptCompile Include="scripts\jquery.d.ts" />
     <TypeScriptCompile Include="scripts\react-dom.d.ts" />
     <TypeScriptCompile Include="scripts\react-global.d.ts" />
@@ -255,6 +247,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
+  <PropertyGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <TypeScriptTarget>ES5</TypeScriptTarget>
@@ -263,10 +256,9 @@
     <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
     <TypeScriptModuleKind>None</TypeScriptModuleKind>
     <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
-    <TypeScriptOutFile>
-    </TypeScriptOutFile>
+    <TypeScriptOutFile>scripts\app.js</TypeScriptOutFile>
     <TypeScriptOutDir />
-    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
     <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
     <TypeScriptSourceMap>True</TypeScriptSourceMap>
     <TypeScriptMapRoot />
